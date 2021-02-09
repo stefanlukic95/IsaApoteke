@@ -1,0 +1,29 @@
+<div class="nav" >
+
+      <li>
+        <a routerLink='/apoteke'>Apoteka</a>
+      </li>
+      <li>
+        <a routerLink='/lekovi'>Lekovi</a>
+      </li>
+      <li>
+        <a routerLink='/korisnici'>Korisnici</a>
+      </li>
+     
+    
+    
+     
+
+  <div class="logoutLblPos" *ngIf="!isLoggedIn">
+    <a  class="buttonstyle" routerLink='/login'>Prijavi se</a>
+    <li *ngIf="!isLoggedIn">
+        <a  class="buttonstyle" routerLink='/register'>Registruj se</a>
+      </li>
+</div>
+<button class="buttonstyle" (click)="logout()">Izloguj se</button>
+<button class="buttonstyle" routerLink='/user'>Korisnicki nalog</button>
+</div>
+
+
+ 
+  

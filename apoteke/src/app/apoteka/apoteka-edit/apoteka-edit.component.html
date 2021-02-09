@@ -1,0 +1,62 @@
+<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+  <form #novaApotekaForm="ngForm" (ngSubmit)="novaApotekaSubmit(novaApotekaForm)">
+   
+    <div class="form-group">
+      <label for="naziv">Naziv</label>
+      <input type="text" id="naziv" name="naziv" class="form-control" required ngModel #apotekaNaziv="ngModel">
+   </div>
+
+   <div class="form-group">
+     <label for="adresa">Adresa</label>
+     <input type="text" id="adresa" name="adresa" class="form-control" required ngModel #apotekaAdresa="ngModel">
+   </div>
+
+   <div class="form-group">
+    <label for="opis">Opis</label>
+    <input type="text" id="opis" name="opis" class="form-control" required ngModel #apotekaOpis="ngModel">
+   </div>
+
+
+      <div class="form-group">
+          <label for="dermatolog">Dermatolozi</label>
+          <form>
+            <select [(ngModel)]="dermatolog" id="dermatolog" name="dermatolog" class="form-control">
+              <option *ngFor="let dermatoloziShow of dermatolozi"
+              [ngValue]="dermatoloziShow">
+              {{dermatoloziShow.ime}}</option>
+            </select>
+            <p>SELEKTOVANO: {{dermatolog|json}}</p>
+          </form>
+        </div>
+
+        <div class="form-group">
+          <label for="farmaceut">Farmaceuti</label>
+          <form>
+            <select [(ngModel)]="farmaceut" id="farmaceut" name="farmaceut" class="form-control">
+              <option *ngFor="let farmaceutiShow of farmaceuti"
+              [ngValue]="farmaceutiShow">
+              {{farmaceutiShow.ime}}</option>
+            </select>
+            <p>SELEKTOVANO: {{farmaceut|json}}</p>
+          </form>
+        </div>
+
+        <div class="form-group">
+          <label for="lek">Lekovi</label>
+          <form>
+            <select [(ngModel)]="lek" id="lek" name="lek" class="form-control">
+              <option *ngFor="let lekoviShow of lekovi"
+              [ngValue]="lekoviShow">
+              {{lekoviShow.naziv}}</option>
+            </select>
+            <p>SELEKTOVANO: {{lek|json}}</p>
+          </form>
+        </div>
+
+
+        
+         
+
+    <button type="submit" class="buttonstyle" [disabled]="!novaApotekaForm.valid">Dodaj</button>
+</form>
+</div>

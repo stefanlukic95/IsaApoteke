@@ -1,0 +1,78 @@
+<div class="row" *ngIf="!pregledEdit">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <form #noviPregledForm="ngForm" (ngSubmit)="noviPregledSubmit(noviPregledForm)">
+         
+            <div class="form-group">
+                <label for="dermatolog"> Dermatolozi</label>
+                <form>
+                  <select [(ngModel)]="dermatolog" id="dermatolog" name="dermatolog" class="form-control">
+                    <option *ngFor="let dermatoloziShow of korisnici"
+                    [ngValue]="dermatoloziShow">
+                    {{dermatoloziShow.ime}}</option>
+                  </select>
+                  <p>SELEKTOVANO: {{dermatolog|json}}</p>
+                </form>
+              </div>
+
+                <div class="form-group">
+                    <label for="datum_vreme">Datum</label>
+                    <input type="date.toString()" id="datum_vreme" name="datum_vreme" class="form-control" required ngModel #pregledDatumVreme="ngModel">
+                </div>
+                  
+                <div class="form-group">
+                    <label for="cena">Cena</label>
+                    <input type="number" id="cena" name="cena" class="form-control" required ngModel #pregledCena="ngModel">
+                </div>
+
+              
+
+    
+          <button type="submit" class="buttonstyle" [disabled]="!noviPregledForm.valid">Dodaj</button>
+    </form>
+    </div>
+    </div> 
+  
+  
+  
+   <div class="row" *ngIf="pregledEdit"> 
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <h1>Uredjivanje pregleda</h1>
+    <form #editPregledForm="ngForm" (ngSubmit)="pregledEdt()">
+
+        <div class="form-group">
+            <label for="dermatolog">Dermatolog</label>
+            <form>
+              <select [(ngModel)]="pregledEdit.dermatolog" id="dermatolog" name="dermatolog" class="form-control">
+                <option *ngFor="let dermatoloziShow of korisnici"
+                [ngValue]="dermatoloziShow">
+                {{dermatoloziShow.ime}}</option>
+              </select>
+              <p>SELEKTOVANO: {{dermatolog|json}}</p>
+            </form>
+          </div>
+      
+        
+        
+      
+        <div class="form-group">
+                <label for="datum_vreme">Datum i vreme</label>
+                <input type="date.toString()" id="datum_vreme" name="datum_vreme" class="form-control" required ngModel #pregledDatumVreme="ngModel" [(ngModel)]="pregledEdit.datum_vreme">
+                <span class="help-block" *ngIf="!pregledDatumVreme.valid && pregledDatumVreme.touched">Datum i vreme su obavezni!</span>
+        </div>
+
+
+        <div class="form-group">
+                <label for="cena">Cena</label>
+                <input type="number" id="cena" name="cena" class="form-control" required ngModel #pregledCena="ngModel" [(ngModel)]="PregledEdit.cena">
+                <span class="help-block" *ngIf="!pregledCena.valid && pregledCena.touched">Cena pregleda je obavezna!</span>
+        </div>
+
+  
+    
+      <button type="submit" class="buttonstyle"  [disabled]="!editPregledForm.valid">Dodaj</button>
+    </form>
+  </div>
+  
+  
+  
+  

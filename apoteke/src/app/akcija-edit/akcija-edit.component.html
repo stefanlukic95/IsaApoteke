@@ -1,0 +1,54 @@
+<div class="row" *ngIf="!akcijaEdit">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form #novaAkcijaForm="ngForm" (ngSubmit)="novaAkcijaSubmit(novaAkcijaForm)">
+       
+        <div class="form-group">
+          <label for="naziv">Naziv</label>
+          <input type="text" id="naziv" name="naziv" class="form-control" required ngModel #akcijaNaziv="ngModel">
+       </div>
+    
+       <div class="form-group">
+         <label for="period_vazenja">Period vazenja</label>
+         <input type="text" id="period_vazenja" name="period_vazenja" class="form-control" required ngModel #lekPeriodVazenja="ngModel">
+       </div>
+    
+    
+        <button type="submit" class="buttonstyle" [disabled]="!novaAkcijaForm.valid">Dodaj</button>
+    </form>
+    </div>
+    </div>
+    
+    
+    <div class="row" *ngIf="akcijaEdit"> 
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <h1>Uredjivanje akcija</h1>
+        <form #editAkcijaForm="ngForm" (ngSubmit)="akcijaEdt()">
+    
+         
+    
+            <div class="form-group">
+                    <label for="naziv">Naziv</label>
+                    <input type="text" id="naziv" name="naziv" class="form-control" required ngModel #akcijaNaziv="ngModel" [(ngModel)]="akcijaEdit.naziv">
+                    <span class="help-block" *ngIf="!akcijaNaziv.valid && akcijaNaziv.touched">Naziv akcije je obavezan!</span>
+            </div>
+            <div class="form-group">
+                <label for="period_vazenja">Period vazenja</label>
+                <input type="text" id="period_vazenja" name="period_vazenja" class="form-control" required ngModel #akcijaPeriodVazenja="ngModel" [(ngModel)]="akcijaEdit.period_vazenja">
+                <span class="help-block" *ngIf="!akcijaPeriodVazenja.valid && akcijaPeriodVazenja.touched">Period je obavezan!</span>
+        </div>
+        <div class="form-group">
+            <label for="pretplatnici">Pretplatnici</label>
+            <input type="email" id="pretplatnici" name="pretplatnici" class="form-control" required ngModel #akcijaPretplatnici="ngModel" [(ngModel)]="akcijaEdit.pretplatnici">
+            <span class="help-block" *ngIf="!akcijaPretplatnici.valid && akcijaPretplatnici.touched">Pretplatnik je obavezan!</span>
+    </div>
+    
+      
+        
+          <button type="submit" class="buttonstyle"  [disabled]="!editAkcijaForm.valid">Dodaj</button>
+        </form>
+      </div>
+      </div>
+      
+      
+      
+      

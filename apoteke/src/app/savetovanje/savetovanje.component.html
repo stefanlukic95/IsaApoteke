@@ -1,0 +1,26 @@
+
+
+
+<a class="list-group-item clearfix" *ngFor="let savetovanjaShow of savetovanja">
+  <div class="pull-left">
+  
+
+
+    <h4 class="list-group-item-text">Datum i vreme: {{savetovanjaShow.datum_vreme}}</h4>
+    <h4 class="list-group-item-text">Farmaceut: {{savetovanjaShow.farmaceut|json}}</h4>
+
+   
+
+  
+  </div>
+  <span class="pull-right">
+     
+      <button class="buttonstyle" (click)="deleteSavetovanje(savetovanjaShow)">Obrisi</button>
+
+     
+      
+  </span>
+</a>
+<button class="btn btn-primary"[routerLink]="['/savetovanja-edit/' + apotekaId]">Zakazi savetovanje</button>
+
+

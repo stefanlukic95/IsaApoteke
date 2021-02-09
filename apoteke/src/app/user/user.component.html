@@ -1,0 +1,27 @@
+<div class="form">
+  <p>Email: {{user.email}}</p>
+  <p>Ime: {{user.ime}}</p>
+  <p>Prezime: {{user.prezime}}</p>
+ 
+  <button class="button" routerLink='/user/edit-user'>Izmeni podatke</button>
+
+
+  <div class="search">
+  <form (submit)="findUser()">
+    <input type="text" placeholder="Ime" [(ngModel)]="ime" name="ime"/>
+    <input type="text" placeholder="Prezime" [(ngModel)]="prezime" name="prezime"/>
+    <button type="submit" class="fa fa-search"></button>
+  </form>
+  <ul>
+    Pretrazeni:
+    <div *ngFor="let userShow of pretrazeniKorisnici">
+    <li>
+    
+    Email:  {{userShow.email}}
+    Ime:  {{userShow.ime}}
+    Prezime:  {{userShow.prezime}}
+    </li>
+    </div>
+  </ul>
+</div>
+  

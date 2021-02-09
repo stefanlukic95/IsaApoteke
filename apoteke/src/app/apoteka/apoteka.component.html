@@ -1,0 +1,46 @@
+
+
+<div class="search">
+  <form (submit)="searchNaziv()">
+    <input type="text" placeholder="naziv" [(ngModel)]="naziv" name="naziv"/>
+    <button type="submit" class="fa fa-search">Search</button>
+  </form>
+  <ul>
+  Naziv:{{pretrazeneApotekeNaziv|json}}
+  </ul>
+</div>
+
+<div class="search">
+  <form (submit)="searchAdresa()">
+    <input type="text" placeholder="adresa" [(ngModel)]="adresa" name="adresa"/>
+    <button type="submit" class="fa fa-search">Search</button>
+  </form>
+  <ul>
+  Adresa:{{pretrazeneApotekeAdresa|json}}
+  </ul>
+</div>
+
+
+
+<a class="list-group-item clearfix" *ngFor="let apotekaShow of apoteke">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading" > Naziv: {{apotekaShow.naziv}}</h4>
+    <p class="list-group-item-text">Adresa: {{apotekaShow.adresa}}</p>
+    <p class="list-group-item-text">Opis: {{apotekaShow.opis}}</p>
+    <p class="list-group-item-text">Lek: {{apotekaShow.lekovi|json}}</p>
+   
+
+  </div>
+  <span class="pull-right">
+    <button class="btn btn-primary" [routerLink]="['/apoteka-edit/' + apotekaShow.id]">Izmeni</button>
+    <button class="btn btn-primary" [routerLink]="['/lekovi/apoteke/' + apotekaShow.id]">Lekovi</button>
+    <button class="btn btn-primary" [routerLink]="['/akcije/apoteke/' + apotekaShow.id]">Akcije</button>
+    <button class="btn btn-primary" [routerLink]="['/pregledi/apoteke/' + apotekaShow.id]">Pregledi</button>
+    <button class="btn btn-primary" [routerLink]="['/savetovanja/apoteke/' + apotekaShow.id]">Savetovanja</button>
+    <button class="btn btn-danger" (click)="deleteApoteka(apotekaShow)">Obrisi</button>
+  </span>
+</a>
+<button class="btn btn-primary" routerLink="/apoteka-edit">Dodaj apoteku</button>
+
+
+

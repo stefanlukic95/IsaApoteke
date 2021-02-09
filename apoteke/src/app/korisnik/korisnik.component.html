@@ -1,0 +1,19 @@
+
+<a class="list-group-item clearfix" *ngFor="let korisnikShow of korisnici">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading" > Ime: {{korisnikShow.ime}}</h4>
+    <p class="list-group-item-text">Prezime: {{korisnikShow.prezime}}</p>
+    <p class="list-group-item-text">Email: {{korisnikShow.email}}</p>
+    <p class="list-group-item-text">Password: {{korisnikShow.password}}</p>
+  
+
+  </div>
+  <span class="pull-right">
+    <button class="btn btn-primary" [routerLink]="['/korisnik/' + korisnikShow.id]">Izmeni</button>
+    <button class="btn btn-danger" (click)="deleteKorisnik(korisnikShow)">Obrisi</button>
+  </span>
+</a>
+
+
+
+

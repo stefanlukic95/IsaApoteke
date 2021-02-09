@@ -1,0 +1,33 @@
+
+  <div class="row" *ngIf="!savetovanjeEdit">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form #novoSavetovanjeForm="ngForm" (ngSubmit)="novoSavetovanjeSubmit(novoSavetovanjeForm)">
+             
+
+          <div class="form-group">
+                  <label for="datum_vreme">Datum (izaberite datum i vreme koje nije zauzeto)</label>
+                  <input type="date.toString()" id="datum_vreme" name="datum_vreme" class="form-control" required ngModel #savetovanjeDatumVreme="ngModel">
+           </div>
+                      
+                        
+
+                <div class="form-group">
+                    <label for="farmaceut"> Farmaceuti</label>
+                    <form>
+                      <select [(ngModel)]="farmaceut" id="farmaceut" name="farmaceut" class="form-control">
+                        <option *ngFor="let farmaceutiShow of korisnici"
+                        [ngValue]="farmaceutiShow">
+                        {{farmaceutiShow.ime}}</option>
+                      </select>
+                      <p>SELEKTOVANO: {{farmaceut|json}}</p>
+                    </form>
+                  </div>
+    
+                    
+                  
+    
+        
+              <button type="submit" class="buttonstyle" [disabled]="!novoSavetovanjeForm.valid">Zakazi</button>
+        </form>
+        </div>
+        </div> 

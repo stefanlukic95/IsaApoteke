@@ -1,0 +1,34 @@
+
+
+<div class="search">
+  <form (submit)="searchNaziv()">
+    <input type="text" placeholder="naziv" [(ngModel)]="naziv" name="naziv"/>
+    <button type="submit" class="fa fa-search">Search</button>
+  </form>
+  <ul>
+  Naziv:{{pretrazeniLekovi|json}}
+
+  </ul>
+</div>
+
+
+<a class="list-group-item clearfix" *ngFor="let lekoviShow of lekovi">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading" > Naziv: {{lekoviShow.naziv}}</h4>
+    <p class="list-group-item-text">Cena: {{lekoviShow.cena}}</p>
+ 
+    
+
+  </div>
+  <span class="pull-right">
+    <button class="btn btn-primary" [routerLink]="['/lek/' + lekoviShow.id]">Promeni cenu</button>
+    <button class="btn btn-danger" (click)="deleteLek(lekoviShow)">Obrisi</button>
+    <button class="buttonstyle" [routerLink]="['/lek-rez/' + lekoviShow.id]">Rezervisi lek</button>
+    
+  </span>
+</a>
+<button class="btn btn-primary"[routerLink]="['/lekovi-edit/' + apotekaId]">Dodaj lek</button>
+
+
+
+

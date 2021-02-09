@@ -1,0 +1,28 @@
+<div class="register-page">
+  <div class="form">
+    <form (ngSubmit)="registruj()" class="register-form" #registerForm="ngForm" >
+      <!-- email -->
+      <input type="email" placeholder="Email" [(ngModel)]="korisnik.email" name="email" required email #email="ngModel"/>
+      <small [hidden]="email.valid || (email.pristine && !registerForm.submitted)">
+          Email is required and format should be <i>john@doe.com</i>.
+      </small>
+      <!-- password -->
+      <input type="password" placeholder="Šifra" required [(ngModel)]="korisnik.password" name="password" #password="ngModel"/>
+
+      <input type="password" placeholder="Ponovite Šifru" [(ngModel)]="confirmPassword.value" required validateEqual="password" name="confirmPassword" #confirmPassword="ngModel" />
+      <small [hidden]="confirmPassword.valid || (confirmPassword.pristine && !registerForm.submitted)">
+          Password mismatch
+      </small>
+      <!-- ime -->
+      <input type="text" placeholder="Ime" [(ngModel)]="korisnik.ime" name="ime" required #ime="ngModel" >
+
+      <!-- prezime -->
+      <input type="text" placeholder="Prezime" [(ngModel)]="korisnik.prezime" name="prezime" required #prezime="ngModel">
+
+  
+
+      <!-- submit -->
+      <button type="submit" [disabled]="!registerForm.form.valid">Registruj se</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="login-page">
+  <div class="form">
+    <form (submit)="login()" class="login-form">
+      <input type="text" placeholder="Korisničko ime" name="username" [(ngModel)]="username"/>
+      <input type="password" placeholder="Šifra" name="password" [(ngModel)]="password"/>
+      <button type="submit">Prijavi me</button>
+      <button type="button" routerLink="/register">Registruj se</button>
+    </form>
+  </div>
+</div>

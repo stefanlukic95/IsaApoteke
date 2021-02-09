@@ -1,0 +1,16 @@
+<div class="login-page">
+  <div class="form">
+    <form (submit)="update()" class="login-form">
+      <div>
+        <label>Ime:  </label>
+        <input type="text" name="ime" [(ngModel)]="user.ime"/>
+      </div>
+      <div>
+        <label>Prezime:  </label>
+        <input type="text" name="prezime" [(ngModel)]="user.prezime"/>
+      </div>
+    
+      <button type="submit" class="buttonstyle" >Potvrdi</button>
+    </form>
+  </div>
+</div>

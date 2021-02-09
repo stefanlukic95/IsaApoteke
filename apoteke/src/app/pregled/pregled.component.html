@@ -1,0 +1,24 @@
+
+<a class="list-group-item clearfix" *ngFor="let preglediShow of pregledi">
+  <div class="pull-left">
+  
+
+
+    <h4 class="list-group-item-text">Dermatolog: {{preglediShow.dermatolog|json}}</h4>
+    <h4 class="list-group-item-text">Datum i vreme: {{preglediShow.datum_vreme}}</h4>
+    <h4 class="list-group-item-text">Cena: {{preglediShow.cena}}</h4>
+   
+
+  
+  </div>
+  <span class="pull-right">
+     
+      <button class="buttonstyle" (click)="deletePregled(preglediShow)">Obrisi</button>
+      <button class="buttonstyle" [routerLink]="['/pregled-rez/' + preglediShow.id]">Rezervisi pregled</button>
+     
+      
+  </span>
+</a>
+<button class="btn btn-primary"[routerLink]="['/pregledi-edit/' + apotekaId]">Dodaj pregled</button>
+
+
