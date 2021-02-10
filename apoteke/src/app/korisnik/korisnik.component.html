@@ -9,7 +9,6 @@
 
   </div>
   <span class="pull-right">
-    <button class="btn btn-primary" [routerLink]="['/korisnik/' + korisnikShow.id]">Izmeni</button>
     <button class="btn btn-danger" (click)="deleteKorisnik(korisnikShow)">Obrisi</button>
   </span>
 </a>
@@ -17,3 +16,24 @@
 
 
 
+
+<div class="search">
+  <form (submit)="findUser()">
+    <input type="text" placeholder="Ime" [(ngModel)]="ime" name="ime"/>
+    <input type="text" placeholder="Prezime" [(ngModel)]="prezime" name="prezime"/>
+    <button type="submit" class="btn btn-primary">Pretrazi</button>
+  </form>
+  <ul>
+    Pretrazeni:
+    <div *ngFor="let userShow of pretrazeniKorisnici">
+    <li>
+    
+    Email:  {{userShow.email}}
+    Ime:  {{userShow.ime}}
+    Prezime:  {{userShow.prezime}}
+   
+    </li>
+    </div>
+  </ul>
+</div>
+  

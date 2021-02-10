@@ -8,6 +8,7 @@
 
     <h4 class="list-group-item-text">Datum i vreme: {{savetovanjaShow.datum_vreme}}</h4>
     <h4 class="list-group-item-text">Farmaceut: {{savetovanjaShow.farmaceut|json}}</h4>
+    <h4 class="list-group-item-text">Pacijent: {{savetovanjaShow.pacijent}}</h4>
 
    
 
@@ -15,7 +16,7 @@
   </div>
   <span class="pull-right">
      
-      <button class="buttonstyle" (click)="deleteSavetovanje(savetovanjaShow)">Obrisi</button>
+      <button class="btn btn-danger" (click)="deleteSavetovanje(savetovanjaShow)">Otkazi</button>
 
      
       

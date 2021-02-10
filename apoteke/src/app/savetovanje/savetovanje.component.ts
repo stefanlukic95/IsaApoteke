@@ -20,7 +20,7 @@ export class SavetovanjeComponent implements OnInit {
   savetovanjeEdit: Savetovanje;
   savetovanja: Savetovanje[];
   selectSavetovanje: Savetovanje;
-  novoSavetovanje: NovoSavetovanje = new NovoSavetovanje(null,null,true);
+  novoSavetovanje: NovoSavetovanje = new NovoSavetovanje(null,null,true,null);
   savetovanje: Savetovanje;
   apotekaId: String;
   datum_vreme: '';

@@ -4,13 +4,13 @@ import { KorisnikService } from '../services/korisnik.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginUserService } from '../login/login-user.service';
 import { LoggedInUser } from '../model/logged-in-user';
-
 @Component({
-  selector: 'app-korisnik',
-  templateUrl: './korisnik.component.html',
-  styleUrls: ['./korisnik.component.css']
+  selector: 'app-dermatolozi',
+  templateUrl: './dermatolozi.component.html',
+  styleUrls: ['./dermatolozi.component.css']
 })
-export class KorisnikComponent implements OnInit {
+export class DermatoloziComponent implements OnInit {
+
   @Input() korisnikShow: Korisnik;
 
  
@@ -71,7 +71,9 @@ export class KorisnikComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    this.getKorisnici();
+    this.getDermatolozi();
   }
 }
+
+
 

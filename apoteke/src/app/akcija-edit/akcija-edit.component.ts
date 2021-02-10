@@ -71,7 +71,7 @@ export class AkcijaEditComponent implements OnInit {
         }
       );
       this.getAkcija();
-    } else if (this.route.snapshot.url[0].path === 'akcije-edit') {
+    } else if (this.route.snapshot.url[0].path === 'akcije') {
       this.route.params.subscribe(
         (params: Params) => {
           this.apotekaId = params['apotekaId'];

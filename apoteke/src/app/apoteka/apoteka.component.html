@@ -28,11 +28,14 @@
     <p class="list-group-item-text">Adresa: {{apotekaShow.adresa}}</p>
     <p class="list-group-item-text">Opis: {{apotekaShow.opis}}</p>
     <p class="list-group-item-text">Lek: {{apotekaShow.lekovi|json}}</p>
+    <p class="list-group-item-text">Pregledi: {{apotekaShow.pregledi|json}}</p> 
+    <p class="list-group-item-text">Savetovanja: {{apotekaShow.savetovanja|json}}</p>
+    <p class="list-group-item-text">Akcije: {{apotekaShow.akcije|json}}</p>
    
 
   </div>
   <span class="pull-right">
-    <button class="btn btn-primary" [routerLink]="['/apoteka-edit/' + apotekaShow.id]">Izmeni</button>
+  
     <button class="btn btn-primary" [routerLink]="['/lekovi/apoteke/' + apotekaShow.id]">Lekovi</button>
     <button class="btn btn-primary" [routerLink]="['/akcije/apoteke/' + apotekaShow.id]">Akcije</button>
     <button class="btn btn-primary" [routerLink]="['/pregledi/apoteke/' + apotekaShow.id]">Pregledi</button>

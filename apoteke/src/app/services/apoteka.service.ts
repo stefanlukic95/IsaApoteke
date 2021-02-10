@@ -16,7 +16,8 @@ const httpOptions = {
 export class ApotekaService {
 
   private url = 'http://localhost:8080/apoteke';
-  private url2 = 'http://localhost:8080/apoteka';
+  private url2 = 'http://localhost:8080/apoteka'; 
+   private urlUpdate = 'http://localhost:8080/apoteka';
 
 
   getApoteke(): Observable<Apoteka[]> {
@@ -37,17 +38,17 @@ export class ApotekaService {
 
   updateApoteka(apoteka: Apoteka): Observable<Apoteka> {
     const id = typeof apoteka === 'string' ? apoteka : apoteka.id;
-    const url = `${this.url2}/${id}`;
-    return this.http.put<Apoteka>(url, apoteka, httpOptions).pipe(
+    const urlUpdate = `${this.urlUpdate}/${id}`;
+    return this.http.put<Apoteka>(urlUpdate, apoteka, httpOptions).pipe(
       catchError(this.handleError<Apoteka>('updateApoteka'))
     );
   }
 
   deleteApoteka(apoteka: Apoteka | string): Observable<Apoteka> {
     const id = typeof apoteka === 'string' ? apoteka : apoteka.id;
-    const url = `${this.url2}/${id}`;
+    const url2 = `${this.url2}/${id}`;
 
-    return this.http.delete<Apoteka>(url, httpOptions).pipe(
+    return this.http.delete<Apoteka>(url2, httpOptions).pipe(
       catchError(this.handleError<Apoteka>('deleteApoteka'))
     );
   }

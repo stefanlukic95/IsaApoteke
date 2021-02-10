@@ -50,6 +50,15 @@ export class ApotekaEditComponent implements OnInit {
   }
 
 
+
+
+
+  apotekaEdt() {
+    this.apotekaService.updateApoteka(this.apotekaEdit).subscribe();
+    this.location.back();
+  }
+  
+
   getDermatolozi(): void {
     this.korisnikService.getKorisnici()
       .subscribe(korisnici => {this.korisnici = korisnici;
@@ -77,6 +86,8 @@ export class ApotekaEditComponent implements OnInit {
       (apoteka) => this.apotekaEdit = apoteka
     );
   }
+
+
   getLekovi(): void {
     this.lekService.getLekovi()
       .subscribe(lekovi => this.lekovi = lekovi);
@@ -103,15 +114,11 @@ export class ApotekaEditComponent implements OnInit {
         }
       );
       this.getApoteka();
-      this.getLekovi();
-   }   
-
-   this.getDermatolozi();
-   this.getFarmaceuti();
-   this.getLekovi();
-  
+      this.getDermatolozi();
+      this.getFarmaceuti();
+    }
   }
-
-
-
 }
+
+
+

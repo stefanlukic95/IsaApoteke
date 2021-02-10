@@ -2,15 +2,15 @@
   <p>Email: {{user.email}}</p>
   <p>Ime: {{user.ime}}</p>
   <p>Prezime: {{user.prezime}}</p>
- 
-  <button class="button" routerLink='/user/edit-user'>Izmeni podatke</button>
+ <p>Rezervisani lekovi:  {{user.rezervisani_lekovi|json}}</p>
+  <button class="btn btn-primary" routerLink='/user/edit-user'>Izmeni podatke</button>
 
 
   <div class="search">
   <form (submit)="findUser()">
     <input type="text" placeholder="Ime" [(ngModel)]="ime" name="ime"/>
     <input type="text" placeholder="Prezime" [(ngModel)]="prezime" name="prezime"/>
-    <button type="submit" class="fa fa-search"></button>
+    <button type="submit" class="btn btn-primary">Pretrazi</button>
   </form>
   <ul>
     Pretrazeni:
@@ -20,6 +20,7 @@
     Email:  {{userShow.email}}
     Ime:  {{userShow.ime}}
     Prezime:  {{userShow.prezime}}
+   
     </li>
     </div>
   </ul>

@@ -35,6 +35,9 @@ import { AkcijaService } from './services/akcija.service';
 import { AkcijaEditComponent } from './akcija-edit/akcija-edit.component';
 import { SavetovanjeService } from './services/savetovanje.service';
 import { SavetovanjeEditComponent } from './savetovanje-edit/savetovanje-edit.component';
+import { RezervacijaListComponent } from './rezervacija-list/rezervacija-list.component';
+import { FarmaceutComponent } from './farmaceut/farmaceut.component';
+import { DermatoloziComponent } from './dermatolozi/dermatolozi.component';
 
 
 
@@ -62,6 +65,9 @@ import { SavetovanjeEditComponent } from './savetovanje-edit/savetovanje-edit.co
     AkcijaComponent,
     AkcijaEditComponent,
     SavetovanjeEditComponent,
+    RezervacijaListComponent,
+    FarmaceutComponent,
+    DermatoloziComponent,
 
  
   

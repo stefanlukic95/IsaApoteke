@@ -18,6 +18,9 @@ import { AkcijaComponent } from '../akcija/akcija.component';
 import { AkcijaEditComponent } from '../akcija-edit/akcija-edit.component';
 import { SavetovanjeComponent } from '../savetovanje/savetovanje.component';
 import { SavetovanjeEditComponent } from '../savetovanje-edit/savetovanje-edit.component';
+import { RezervacijaListComponent } from '../rezervacija-list/rezervacija-list.component';
+import { FarmaceutComponent } from '../farmaceut/farmaceut.component';
+import { DermatoloziComponent } from '../dermatolozi/dermatolozi.component';
 
 
 
@@ -25,14 +28,15 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'korisnici', component: KorisnikComponent},
   { path: 'apoteke', component: ApotekaComponent},
-  { path: 'apoteka-edit/:apotekaId', component : ApotekaEditComponent },
+  { path: 'apoteka/:apotekaId', component : ApotekaEditComponent },
+  {path: 'apoteka-edit', component: ApotekaEditComponent},
   { path: 'lekovi', component: LekComponent},
   {path: 'lekovi/apoteke/:apotekaId', component: LekComponent},
-  {path: 'akcije/apoteke/:apotekaId', component: AkcijaComponent},
+  {path: 'akcije/apoteke/:apotekaId', component: AkcijaEditComponent},
   {path: 'pregledi/apoteke/:apotekaId', component: PregledComponent},
   {path: 'savetovanja/apoteke/:apotekaId', component: SavetovanjeComponent},
   { path: 'savetovanja-edit/:apotekaId', component: SavetovanjeEditComponent },
-  { path: 'akcija/:akcijaId', component : AkcijaEditComponent },
+  { path: 'akcije', component : AkcijaComponent },
   { path: 'lek/:lekId', component : LekEditComponent },
   { path: 'lekovi-edit/:apotekaId', component : LekEditComponent },
   { path: 'user', component: UserComponent},
@@ -42,7 +46,10 @@ const routes: Routes = [
   { path: 'pregledi', component: PregledComponent },
   { path: 'pregledi-edit/:apotekaId', component: PregledEditComponent },
   { path: 'pregled-rez/:pregledId', component: RezervacijaComponent},
-  { path: 'savetovanje', component: SavetovanjeComponent}
+  { path: 'savetovanje', component: SavetovanjeComponent},
+  { path: 'rezervacije', component: RezervacijaListComponent},
+  {path: 'farmaceuti', component: FarmaceutComponent},
+  {path: 'dermatolozi', component : DermatoloziComponent}
 
 
  

@@ -9,19 +9,32 @@
       <li>
         <a routerLink='/korisnici'>Korisnici</a>
       </li>
+      <li>
+        <a routerLink='/farmaceuti'>Farmaceuti</a>
+      </li>
+      <li>
+        <a routerLink='/dermatolozi'>Dermatolozi</a>
+      </li>
+      <li>
+        <a routerLink='/rezervacije'>Rezervacije</a>
+      </li>
+      <li>
+        <a routerLink='/akcije'>Akcije</a>
+      </li>
+  
      
     
     
      
 
   <div class="logoutLblPos" *ngIf="!isLoggedIn">
-    <a  class="buttonstyle" routerLink='/login'>Prijavi se</a>
+    <a  class="btn btn-primary" routerLink='/login'>Prijavi se</a>
     <li *ngIf="!isLoggedIn">
-        <a  class="buttonstyle" routerLink='/register'>Registruj se</a>
+        <a  class="btn btn-primary" routerLink='/register'>Registruj se</a>
       </li>
 </div>
-<button class="buttonstyle" (click)="logout()">Izloguj se</button>
-<button class="buttonstyle" routerLink='/user'>Korisnicki nalog</button>
+<button class="btn btn-primary" (click)="logout()">Izloguj se</button>
+<button class="btn btn-primary" routerLink='/user'>Korisnicki nalog</button>
 </div>
 
 

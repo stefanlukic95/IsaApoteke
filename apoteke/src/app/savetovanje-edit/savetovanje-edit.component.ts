@@ -20,7 +20,7 @@ export class SavetovanjeEditComponent implements OnInit {
   savetovanjeEdit: Savetovanje;
   savetovanja: Savetovanje[];
   selectSavetovanje: Savetovanje;
-  novoSavetovanje: NovoSavetovanje = new NovoSavetovanje(null,null,true);
+  novoSavetovanje: NovoSavetovanje = new NovoSavetovanje(null,null,true,null);
   savetovanje: Savetovanje;
   apotekaId: String;
   datum_vreme: '';
@@ -34,7 +34,7 @@ export class SavetovanjeEditComponent implements OnInit {
   novoSavetovanjeSubmit(forma: NgForm) {
     this.novoSavetovanje.farmaceut = this.farmaceut;
     this.novoSavetovanje.datum_vreme = forma.value.datum_vreme;
- 
+    
     this.savetovanjeService.insertSavetovanje(this.novoSavetovanje,this.apotekaId).subscribe();
     forma.reset();
     this.location.back();

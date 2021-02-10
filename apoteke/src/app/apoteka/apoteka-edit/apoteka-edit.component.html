@@ -1,6 +1,8 @@
+
+<div class="row" *ngIf="!apotekaEdit"> 
 <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
   <form #novaApotekaForm="ngForm" (ngSubmit)="novaApotekaSubmit(novaApotekaForm)">
-   
+    <h1>NOVAAAA apoteke</h1>
     <div class="form-group">
       <label for="naziv">Naziv</label>
       <input type="text" id="naziv" name="naziv" class="form-control" required ngModel #apotekaNaziv="ngModel">
@@ -53,10 +55,67 @@
           </form>
         </div>
 
-
-        
-         
-
     <button type="submit" class="buttonstyle" [disabled]="!novaApotekaForm.valid">Dodaj</button>
 </form>
 </div>
+</div>
+
+
+
+<div class="row" *ngIf="apotekaEdit"> 
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <h1>Uredjivanje apoteke</h1>
+    <form #editApotekaForm="ngForm" (ngSubmit)="apotekaEdt()">
+
+
+
+      <div class="form-group">
+        <label for="naziv">Naziv</label>
+        <input type="text" id="naziv" name="naziv" class="form-control" required ngModel #apotekaNaziv="ngModel" [(ngModel)]="apotekaEdit.naziv">
+        <span class="help-block" *ngIf="!apotekaNaziv.valid && apotekaNaziv.touched">Naziv je obavezan!</span>
+</div>
+
+
+
+<div class="form-group">
+  <label for="adresa">Adresa</label>
+  <input type="text" id="adresa" name="adresa" class="form-control" required ngModel #apotekaAdresa="ngModel" [(ngModel)]="apotekaEdit.adresa">
+  <span class="help-block" *ngIf="!apotekaAdresa.valid && apotekaAdresa.touched">Adresa je obavezna!</span>
+</div>
+
+<div class="form-group">
+  <label for="opis">Opis</label>
+  <input type="text" id="opis" name="opis" class="form-control" required ngModel #apotekaOpis="ngModel" [(ngModel)]="apotekaEdit.opis">
+  <span class="help-block" *ngIf="!apotekaOpis.valid && apotekaOpis.touched">Opis je obavezan!</span>
+</div>
+
+        <div class="form-group">
+            <label for="dermatolog">Dermatolog</label>
+            <form>
+              <select [(ngModel)]="apotekaEdit.dermatolog" id="dermatolog" name="dermatolog" class="form-control">
+                <option *ngFor="let dermatoloziShow of korisnici"
+                [ngValue]="dermatoloziShow">
+                {{dermatoloziShow.ime}}</option>
+              </select>
+              <p>SELEKTOVANO: {{dermatolog|json}}</p>
+            </form>
+          </div>
+      
+          <div class="form-group">
+            <label for="farmaceut">Farmaceut</label>
+            <form>
+              <select [(ngModel)]="apotekaEdit.farmaceut" id="farmaceut" name="farmaceut" class="form-control">
+                <option *ngFor="let farmaceutiShow of korisnici"
+                [ngValue]="farmaceutiShow">
+                {{farmaceutiShow.ime}}</option>
+              </select>
+              <p>SELEKTOVANO: {{farmaceut|json}}</p>
+            </form>
+          </div>
+      
+
+  
+    
+      <button type="submit" class="buttonstyle"  [disabled]="!editApotekaForm.valid">Dodaj</button>
+    </form>
+  </div>

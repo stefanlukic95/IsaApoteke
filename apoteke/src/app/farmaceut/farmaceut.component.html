@@ -1,0 +1,38 @@
+
+<a class="list-group-item clearfix" *ngFor="let korisnikShow of korisnici">
+    <div class="pull-left">
+      <h4 class="list-group-item-heading" > Ime: {{korisnikShow.ime}}</h4>
+      <p class="list-group-item-text">Prezime: {{korisnikShow.prezime}}</p>
+      <p class="list-group-item-text">Email: {{korisnikShow.email}}</p>
+
+    
+  
+    </div>
+ 
+  </a>
+  
+  
+  
+  
+  
+  <div class="search">
+    <form (submit)="findUser()">
+      <input type="text" placeholder="Ime" [(ngModel)]="ime" name="ime"/>
+      <input type="text" placeholder="Prezime" [(ngModel)]="prezime" name="prezime"/>
+      <button type="submit" class="btn btn-primary">Pretrazi</button>
+    </form>
+    <ul>
+      Pretrazeni:
+      <div *ngFor="let userShow of pretrazeniKorisnici">
+      <li>
+      
+      Email:  {{userShow.email}}
+      Ime:  {{userShow.ime}}
+      Prezime:  {{userShow.prezime}}
+      Uloga: {{userShow.roles}}
+     
+      </li>
+      </div>
+    </ul>
+  </div>
+    

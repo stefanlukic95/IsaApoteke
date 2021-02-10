@@ -1,0 +1,27 @@
+
+
+
+<a class="list-group-item clearfix" *ngFor="let rezervacijeShow of rezervacije">
+    <div class="pull-left">
+    
+  
+  
+      <h4 class="list-group-item-text">Pregled: {{rezervacijeShow.pregled|json}}</h4>
+      <h4 class="list-group-item-text">Pacijent: {{rezervacijeShow.pacijent}}</h4>
+  
+     
+  
+    
+    </div>
+    <span class="pull-right">
+       
+        <button class="btn btn-danger" (click)="deleteRezervacija(rezervacijeShow)">Otkazi</button>
+  
+       
+        
+    </span>
+  </a>
+
+  
+  
+  
