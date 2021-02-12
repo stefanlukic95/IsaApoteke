@@ -38,6 +38,12 @@ import { SavetovanjeEditComponent } from './savetovanje-edit/savetovanje-edit.co
 import { RezervacijaListComponent } from './rezervacija-list/rezervacija-list.component';
 import { FarmaceutComponent } from './farmaceut/farmaceut.component';
 import { DermatoloziComponent } from './dermatolozi/dermatolozi.component';
+import { NarudzbenicaComponent } from './narudzbenica/narudzbenica.component';
+import { NarudzbenicaService } from './services/narudzbenica.service';
+import { NarudzbenicaEditComponent } from './narudzbenica-edit/narudzbenica-edit.component';
+import { GodisnjiOdmorComponent } from './godisnji-odmor/godisnji-odmor.component';
+import { GodisnjiOdmorService } from './services/godisnji-odmor.service';
+import { GodisnjiOdmorEditComponent } from './godisnji-odmor-edit/godisnji-odmor-edit.component';
 
 
 
@@ -68,6 +74,10 @@ import { DermatoloziComponent } from './dermatolozi/dermatolozi.component';
     RezervacijaListComponent,
     FarmaceutComponent,
     DermatoloziComponent,
+    NarudzbenicaComponent,
+    NarudzbenicaEditComponent,
+    GodisnjiOdmorComponent,
+    GodisnjiOdmorEditComponent
 
  
   
@@ -94,6 +104,8 @@ import { DermatoloziComponent } from './dermatolozi/dermatolozi.component';
     RezervacijaService,
     AkcijaService,
     SavetovanjeService,
+    NarudzbenicaService,
+    GodisnjiOdmorService,
 
     
     {

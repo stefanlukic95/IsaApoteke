@@ -1,0 +1,23 @@
+
+<a class="list-group-item clearfix" *ngFor="let narudzbeniceShow of narudzbenice">
+    <div class="pull-left">
+    
+  
+  
+      <h4 class="list-group-item-text">Lekovi: {{narudzbeniceShow.lek|json}}</h4>
+      <h4 class="list-group-item-text">Datum i vreme: {{narudzbeniceShow.datum_vreme}}</h4>
+      <h4 class="list-group-item-text">Kolicina: {{narudzbeniceShow.kolicina}}</h4>
+      <h4 class="list-group-item-text">Prihvacena: {{narudzbeniceShow.prihvacena}}</h4>
+  
+    
+    </div>
+    <span class="pull-right">
+        <button class="btn btn-danger" (click)="deleteNarudzbenica(narudzbeniceShow)">Obrisi</button>
+        <button class="btn btn-primary" [routerLink]="['/narudzbenica/' + narudzbeniceShow.id]">Prihvati</button>
+        
+    </span>
+  </a>
+  <button class="btn btn-primary"[routerLink]="['/narudzbenice-edit/' + apotekaId]">Napravi narudzbenicu</button>
+  
+  
+  

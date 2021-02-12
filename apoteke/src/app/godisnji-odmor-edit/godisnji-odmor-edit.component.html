@@ -1,0 +1,44 @@
+<div class="row" *ngIf="!godisnjiOdmorEdit"> 
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <form #noviGodisnjiOdmorForm="ngForm" (ngSubmit)="noviGodisnjiOdmorSubmit(noviGodisnjiOdmorForm)">
+         
+           
+
+                <div class="form-group">
+                    <label for="termin_od">Datum od</label>
+                    <input type="date.toString()" id="termin_od" name="termin_od" class="form-control" required ngModel #godisnjiOdmorDatumOd="ngModel">
+                </div>
+                  
+                <div class="form-group">
+                    <label for="termin_do">Datum od</label>
+                    <input type="date.toString()" id="termin_do" name="termin_do" class="form-control" required ngModel #godisnjiOdmorDatumDo="ngModel">
+                </div>
+               
+
+              
+
+    
+          <button type="submit" class="btn btn-primary" [disabled]="!noviGodisnjiOdmorForm.valid">Dodaj</button>
+    </form>
+    </div>
+</div>
+    
+    <div class="row" *ngIf="godisnjiOdmorEdit"> 
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+          <h1>Prihvati</h1>
+          <form #editGodisnjiOdmorForm="ngForm" (ngSubmit)="godisnjiOdmorEdt()">
+      
+           
+      
+              <div class="form-group">
+                      <label for="odobren">Prihvacena</label>
+                      <input type="boolean" id="odobren" name="odobren" class="form-control" required ngModel #godisnjiOdmorOdobren="ngModel" [(ngModel)]="godisnjiOdmorEdit.odobren">
+                      <span class="help-block" *ngIf="!godisnjiOdmorOdobren.valid && godisnjiOdmorOdobren.touched">Obavezno!</span>
+              </div>
+      
+        
+          
+            <button type="submit" class="buttonstyle"  [disabled]="!editGodisnjiOdmorForm.valid">Dodaj</button>
+          </form>
+        </div>
+        </div>

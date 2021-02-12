@@ -1,0 +1,53 @@
+<div class="row" *ngIf="!narudzbenicaEdit"> 
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <form #novaNarudzbenicaForm="ngForm" (ngSubmit)="novaNarudzbenicaSubmit(novaNarudzbenicaForm)">
+         
+            <div class="form-group">
+                <label for="lek"> Lekovi</label>
+                <form>
+                  <select [(ngModel)]="lek" id="lek" name="lek" class="form-control">
+                    <option *ngFor="let lekoviShow of lekovi"
+                    [ngValue]="lekoviShow">
+                    {{lekoviShow.naziv}}</option>
+                  </select>
+                  <p>SELEKTOVANO: {{lek|json}}</p>
+                </form>
+              </div>
+
+                <div class="form-group">
+                    <label for="datum_vreme">Datum i vreme</label>
+                    <input type="date.toString()" id="datum_vreme" name="datum_vreme" class="form-control" required ngModel #narudzbenicaDatumVreme="ngModel">
+                </div>
+                  
+                <div class="form-group">
+                    <label for="kolicina">Kolicina</label>
+                    <input type="number" id="kolicina" name="kolicina" class="form-control" required ngModel #narudzbenicaKolicina="ngModel">
+                </div>
+
+              
+
+    
+          <button type="submit" class="btn btn-primary" [disabled]="!novaNarudzbenicaForm.valid">Dodaj</button>
+    </form>
+    </div>
+</div>
+    
+    <div class="row" *ngIf="narudzbenicaEdit"> 
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+          <h1>Prihvati</h1>
+          <form #editNarudzbenicaForm="ngForm" (ngSubmit)="narudzbenicaEdt()">
+      
+           
+      
+              <div class="form-group">
+                      <label for="prihvacena">Prihvacena</label>
+                      <input type="boolean" id="prihvacena" name="prihvacena" class="form-control" required ngModel #narudzbenicaPrihvacena="ngModel" [(ngModel)]="narudzbenicaEdit.prihvacena">
+                      <span class="help-block" *ngIf="!narudzbenicaPrihvacena.valid && narudzbenicaPrihvacena.touched">Obavezno!</span>
+              </div>
+      
+        
+          
+            <button type="submit" class="buttonstyle"  [disabled]="!editNarudzbenicaForm.valid">Dodaj</button>
+          </form>
+        </div>
+        </div>

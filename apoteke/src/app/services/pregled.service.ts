@@ -20,7 +20,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PregledService {
-  private url = 'http://localhost:8080/pregledi';
+  private url = 'http://localhost:8080/pregledi'; 
+  private url1 = 'http://localhost:8080/pregled';
   private urlPost = 'http://localhost:8080/pregledi/apoteke';
   private urlDel = 'http://localhost:8080/pregled-rez';
 
@@ -29,7 +30,7 @@ export class PregledService {
 
   }
   getPregled(id: string): Observable<Pregled> {
-    return this.http.get<Pregled>(this.url + '/' + id);
+    return this.http.get<Pregled>(this.url1 + '/' + id);
   }
 
   insertPregled(pregled: NoviPregled,apotekaId: String): Observable<NoviPregled> {
@@ -40,8 +41,8 @@ export class PregledService {
 
   updatePregled(pregled: Pregled): Observable<Pregled> {
     const id = typeof pregled === 'string' ? pregled : pregled.id;
-    const url = `${this.url}/${id}`;
-    return this.http.put<Pregled>(url, pregled, httpOptions).pipe(
+    const url1 = `${this.url1}/${id}`;
+    return this.http.put<Pregled>(url1, pregled, httpOptions).pipe(
       catchError(this.handleError<Pregled>('updatePregled'))
     );
   }

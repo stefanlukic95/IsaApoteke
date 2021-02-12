@@ -1,0 +1,27 @@
+
+<a class="list-group-item clearfix" *ngFor="let godisnjiOdmorShow of godisnjiOdmori">
+    <div class="pull-left">
+    
+  
+  
+      <h4 class="list-group-item-text">Korisnik: {{godisnjiOdmorShow.korisnik}}</h4>
+      <h4 class="list-group-item-text">Datum od : {{godisnjiOdmorShow.termin_od}}</h4>
+      <h4 class="list-group-item-text">Datum do: {{godisnjiOdmorShow.termin_do}}</h4>
+      <h4 class="list-group-item-text">Odobren: {{godisnjiOdmorShow.odobren}}</h4>
+     
+  
+    
+    </div>
+    <span class="pull-right">
+       
+        <button class="btn btn-primary" (click)="deleteGodisnjiOdmor(godisnjiOdmorShow)">Obrisi</button>
+        <button class="btn btn-primary" [routerLink]="['/godisnjiOdmor/' + godisnjiOdmorShow.id]">Prihvati</button>
+      
+       
+        
+    </span>
+  </a>
+  <button class="btn btn-primary" routerLink="/godisnjiOdmor-edit">Kreiraj zahtev za godisnji</button>
+  
+  
+  

@@ -10,7 +10,7 @@ import { Korisnik } from '../model/korisnik';
 import { Observable } from 'rxjs/internal/Observable';
 import { catchError } from 'rxjs/internal/operators/catchError';
 import { of } from 'rxjs/internal/observable/of';
-//import jwt_decode from 'jwt-decode';
+
 
 import jwtDecode , { JwtPayload }from 'jwt-decode';
 
@@ -25,7 +25,6 @@ const httpOptions = {
 
 @Injectable()
 export class LoginUserService {
-
 
 
   user: LoggedInUser;
